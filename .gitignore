@@ -3,3 +3,6 @@ classic-world-db.zip
 tbc-world-db.zip
 wotlk-world-db.zip
 schema.sql
+classic.sqlite
+wotlk.sqlite
+tbc.sqlite
