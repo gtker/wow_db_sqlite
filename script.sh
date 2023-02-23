@@ -31,6 +31,9 @@ function download_and_zip_data()
 
 git submodule update --init --recursive
 
+find . -iname '*.sqlite' | xargs rm || true
+find . -iname '*.zip' | xargs rm || true
+
 download_and_zip_data "classic"
 download_and_zip_data "tbc"
 download_and_zip_data "wotlk"
