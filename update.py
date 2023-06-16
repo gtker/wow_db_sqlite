@@ -34,6 +34,11 @@ def download_databases():
         print(f"Renaming '{sqlite_file}' to '{expansion}.sqlite'")
         os.rename(sqlite_file, f"{expansion}.sqlite")
 
+        zip_file = f"{expansion}.zip"
+        if os.path.isfile(zip_file):
+            os.remove(zip_file)
+        with zipfile.ZipFile(zip_file, 'w') as zip:
+            zip.write(f"{expansion}.sqlite")
 
 def main():
     download_databases()
