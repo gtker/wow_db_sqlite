@@ -37,7 +37,7 @@ def download_databases():
         zip_file = f"{expansion}.zip"
         if os.path.isfile(zip_file):
             os.remove(zip_file)
-        with zipfile.ZipFile(zip_file, 'w') as zip:
+        with zipfile.ZipFile(zip_file, 'w', compression=zipfile.ZIP_LZMA) as zip:
             zip.write(f"{expansion}.sqlite")
 
 def main():
